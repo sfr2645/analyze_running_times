@@ -13,17 +13,14 @@ for N in dataSize:
         arr = sorted([random.randint(1, 1000000) for _ in range(N)])
         target = random.randint(1, 1000000)
 
-        # Recursive Binary Search
         start = time.perf_counter()
         recursive_binary_search(arr, target, 0, len(arr) - 1)
         SumRBS += (time.perf_counter() - start) * 1_000_000
 
-        # Iterative Binary Search
         start = time.perf_counter()
         iterative_binary_search(arr, target)
         SumIBS += (time.perf_counter() - start) * 1_000_000
 
-        # Sequential Search
         start = time.perf_counter()
         sequential_search(arr, target)
         SumSeqS += (time.perf_counter() - start) * 1_000_000
